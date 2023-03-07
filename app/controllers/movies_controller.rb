@@ -6,6 +6,6 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @review = Review.new
-    @descritpion = Description.find(params[:id])
+    @description = Description.find(params[:id]).content
   end
 end

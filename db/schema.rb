@@ -31,12 +31,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_114901) do
 
   create_table "reviews", force: :cascade do |t|
     t.text "content"
-    t.bigint "movies_id", null: false
+    t.bigint "movie_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["movies_id"], name: "index_reviews_on_movies_id"
+    t.index ["movie_id"], name: "index_reviews_on_movie_id"
   end
 
   add_foreign_key "descriptions", "movies"
-  add_foreign_key "reviews", "movies", column: "movies_id"
+  add_foreign_key "reviews", "movies"
 end

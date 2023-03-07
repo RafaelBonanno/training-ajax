@@ -1,4 +1,4 @@
-<h1><%= @movie.name %>, released on <small><%= @movie.release %></small></h1>
+<h1><%= @movie.title %>, released on <small><%= @movie.release %></small></h1>
 
 <h2> <%= @description %></h2>
 
@@ -8,7 +8,7 @@
   <% if @movie.reviews.blank? %>
     Hey the movie <%= @movie.title %> hasn't had any reviews yet, wanna add one?
   <% else %>
-    <%= @movie.reviews.each do |review| %>
+    <% @movie.reviews.each do |review| %>
       <p><%= review.content %></p>
     <% end %>
   <% end %>

@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :movies
+  belongs_to :movie
   validates :content, length: {minimum: 20}
 end
