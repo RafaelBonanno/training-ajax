@@ -1,1 +1,14 @@
-<h1><%= movie.name %></h1>
+<h1><%= @movie.name %>, released on <small><%= @movie.release %></small></h1>
+<h2><%= pluralize @movie.reviews.size, "review" %></h2>
+
+<div>
+  <% if @movie.reviews.blank? %>
+    Hey the movie <%= @movie.title %> hasn't had any reviews yet, wanna add one?
+  <% else %>
+    <%= @movie.reviews.each do |review| %>
+      <p><%= review.content %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "Back to all the movies !", movies_path %>
