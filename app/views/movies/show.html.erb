@@ -1,5 +1,8 @@
 <h1><%= @movie.name %>, released on <small><%= @movie.release %></small></h1>
-<h2><%= pluralize @movie.reviews.size, "review" %></h2>
+
+<h2> <%= @description %></h2>
+
+<h3><%= pluralize @movie.reviews.size, "review" %></h3>
 
 <div>
   <% if @movie.reviews.blank? %>
@@ -10,5 +13,9 @@
     <% end %>
   <% end %>
 </div>
+<%= simple_form_for([@movie, @review]) do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
 
 <%= link_to "Back to all the movies !", movies_path %>

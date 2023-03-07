@@ -10,10 +10,20 @@ Movie.destroy_all
 puts "Creating movies..."
 Movie.create!(
   title: "Potato: the comeback",
-  release: Date.new(2002, 02, 02)
+  release: Date.new(2002, 02, 02),
 )
 Movie.create!(
   title: "Potato 4: mashed potatoes",
   release: Date.new(2004, 04, 04)
 )
 puts "Finished!"
+
+puts "Adding the descriptions..."
+Description.create!(
+  content: "big potato - we need to eat big potatoes, said everyone. Talented film maker.",
+  movie_id: 1
+)
+Description.create!(
+  content: "big potato but mashed - mashed potatoes are probably healthy for you but hey guess what it really isnt",
+  movie_id: 2
+)
